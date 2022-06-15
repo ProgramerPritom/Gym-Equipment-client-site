@@ -1,0 +1,13 @@
+.card-img-top{
+    height: 250px !important;
+    width: 100% !important;
+}
+#blog-btn{
+    background-color: rgb(118, 118, 228) !important;
+   
+}
+#blog-btn:hover{
+    color: #000000 !important;
+    background-color: transparent !important;
+    border-color: rgb(118, 118, 228) !important;
+}
