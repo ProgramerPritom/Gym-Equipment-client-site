@@ -1,0 +1,42 @@
+import React from 'react';
+import { Button, Card, ListGroup } from 'react-bootstrap';
+import './CatagoryCard.css';
+
+const CatagoryCard = ({showEquipment}) => {
+    const showDescription = showEquipment.description.slice(0,100);
+    const seeMore = showDescription + ".....";
+    
+    return (
+        <div>
+            
+            <Card style={{ width: '380px'}}>
+            <Card.Img className='displayCard-img' variant="top" src={showEquipment.image} />
+            <hr />
+            <Card.Body>
+                <Card.Title>{showEquipment.name}</Card.Title>
+                <Card.Text>
+                    
+                {showDescription === 0 ? showDescription: seeMore}
+                
+                </Card.Text>
+                
+            </Card.Body>
+            <div className="pricing-area">
+                <p>${showEquipment.price}</p>
+                <p>Q~{showEquipment.quantity}</p>
+            </div>
+            <ListGroup className="list-group-flush text-center">
+            <ListGroup.Item>Supplier : {showEquipment.supplier}</ListGroup.Item>
+            </ListGroup>
+            <Button id='blog-btn' variant="primary">Manage Store</Button>
+            </Card>
+
+            
+        </div>
+    );
+};
+
+export default CatagoryCard;
+/**
+ * showDescription ===0 ? showDescription, "more"
+ */

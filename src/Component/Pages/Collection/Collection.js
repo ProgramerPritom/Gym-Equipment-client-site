@@ -13,9 +13,9 @@ const Collection = () => {
                     <img className='rounded' src="https://cdn.shopify.com/s/files/1/0265/4945/2871/files/banner_v4.jpg?v=1575866635" alt="" />
                 </div>
                 <div className="text-section">
-                    <p>New Collection</p>
+                    <p>Find Collection</p>
                     <h3>Women Clothes</h3>
-                    <Button>Shop now</Button>
+                    <Button>Store Now</Button>
                 </div>
                 </div>
 
@@ -25,9 +25,9 @@ const Collection = () => {
                     <img className='rounded' src="https://cdn.shopify.com/s/files/1/0265/4945/2871/files/banner_v4.1.jpg?v=1575866818" alt="" />
                 </div>
                 <div className="text-section-2">
-                    <p>New Collection</p>
+                    <p>Find Collection</p>
                     <h3>Gym Equipment</h3>
-                    <Button>Shop now</Button>
+                    <Button>Store</Button>
                 </div>
                 </div>
                 

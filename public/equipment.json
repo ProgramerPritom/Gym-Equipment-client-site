@@ -1,0 +1,65 @@
+[
+    {
+        "_id" : "01",
+        "name" : "Adjustable bench",
+        "image" : "https://m.media-amazon.com/images/I/61R8jWBmz0L._SL1500_.jpg",
+        "description" : "The adjustable bench is a very essential gym equipment to have in your Gym. It has a flat, incline and decline position where you can have entirely six several positions curves steady for a coalition grip, the strong tubular metal pattern makes this equipment extra sturdy and self-assembly required entirely foldable & portable chip-resistant pattern wrapped with some epoxy powder and these are coated & strongly construct that can endure for a high time.",
+        "price" : "250",
+        "quantity" : "55",
+        "supplier" : "Eugene Brackett"
+    },
+    {
+        "_id" : "02",
+        "name" : "Barbell stand",
+        "image" : "https://5.imimg.com/data5/QG/ON/MY-38667471/barbell-rack-500x500.jpg",
+        "description" : "The barbells are also another very important gym equipment. It is used in bodybuilding, weight training, powerlifting, weightlifting. It has a very long bar. At both ends, some weights are attached. Its price starts from 1500 rupees and comes with various brands and prices.",
+        "price" : "350",
+        "quantity" : "45",
+        "supplier" : "George Cooke"
+    },
+    {
+        "_id" : "03",
+        "name" : "Dumbbells stand",
+        "image" : "https://image.made-in-china.com/202f0j00zUCRTuJcvigl/Dumbbell-Rack-Commercial-Gym-Fitness-Equipment.jpg",
+        "description" : "The dumbbell racks and weight trees can easily be placed together centred in the room or against a wall. You can have dumbbells kept properly in this stand. If you don't use our stand it might have an accident so it is another very important equipment for your Gym. It comes with gauge steel that is quite heavy with Welded Construction of All-4-Side is Deburred out & inside for the safety of users.",
+        "price" : "320",
+        "quantity" : "60",
+        "supplier" : "Michael Williams"
+    },
+    {
+        "_id" : "04",
+        "name" : "Tank Top",
+        "image" : "https://images.unsplash.com/photo-1593419528756-3cdfa1615b86?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+        "description" : "A special kind of tank top is called a muscle shirt, also known as a shooter shirt in the United States. They were particularly popular back in the 1980s and were normally associated with bodybuilders, surfers, and gym enthusiasts, which is how they got this unique name.",
+        "price" : "420",
+        "quantity" : "66",
+        "supplier" : "Teresa Morris"
+    },
+    {
+        "_id" : "05",
+        "name" : "Hoodie Tank Top",
+        "image" : "https://i.pinimg.com/originals/5a/d9/34/5ad934cd15c326aac0c3ff0bc7d0a837.jpg",
+        "description" : "Essential Hoodie Tank Top is a highly comfortable piece of clothing for your free time. It is made of soft cotton with an admixture of elastane, which guarantees real comfort. The hooded tank top has a perfectly fitting cut, which will make your hard earned muscles on your arms and shoulders stand out.",
+        "price" : "280",
+        "quantity" : "39",
+        "supplier" : "Davis Fields"
+    },
+    {
+        "_id" : "06",
+        "name" : "Gym Ball",
+        "image" : "https://cdn.webshopapp.com/shops/275648/files/332225074/1260x1120x1/basic-fit-gym-ball.jpg",
+        "description" : "The Swiss ball, also known as an exercise ball or a gym ball, is a training aid aimed primarily at the stretching and strengthening of the abdominal, groin, lumbar (lower) back, and upper leg muscles of the body. The development of these structures is often referred to as the building and maintaining of core strength, an important stabilizing feature in any sport.",
+        "price" : "180",
+        "quantity" : "72",
+        "supplier" : "John Walker"
+    },
+    {
+        "_id" : "07",
+        "name" : "Punch Bag",
+        "image" : "https://mysports.lk/wp-content/uploads/2021/02/leather-punchbag.jpg",
+        "description" : "Your cardiovascular fitness, muscular endurance and muscular strength will all benefit greatly from using a punch bag.” No body part will be spared: boxing is demanding on your upper body, lower body, and core, and the fat-sizzling HIIT nature of the workout reveals lean muscle like no other.",
+        "price" : "320",
+        "quantity" : "49",
+        "supplier" : "Nancy Leone"
+    }
+]
