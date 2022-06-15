@@ -3,7 +3,9 @@
 }
 .carousel-caption{
     text-align: none !important;
-    bottom: 270px !important;
+    bottom: 250px !important;
+    text-align: start !important;
+    right: 0 !important;
 }
 .carousel-control-next, .carousel-control-prev {
     display: none !important;
