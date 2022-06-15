@@ -1,0 +1,10 @@
+.slider-img{
+    height: 550px;
+}
+.carousel-caption{
+    text-align: none !important;
+    bottom: 270px !important;
+}
+.carousel-control-next, .carousel-control-prev {
+    display: none !important;
+}

@@ -1,0 +1,15 @@
+.navbar{
+    padding: 0!important;
+    
+}
+nav.navbar.navbar-expand-lg.navbar-light.bg-primary {
+    background-color: rgb(38, 109, 190) !important;
+}
+.navbar-brand{
+    width: 25% !important;
+    padding: 0!important;
+    margin-right: 0!important;
+}
+.logo-img{
+    width: 35%;
+}
