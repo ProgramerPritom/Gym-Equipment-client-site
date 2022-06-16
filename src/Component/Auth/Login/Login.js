@@ -1,17 +1,53 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import SocialLogin from '../Social/SocialLogin';
 import './Login.css';
-import { FaGoogle } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
+import { Link, useNavigate } from 'react-router-dom';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import { toast } from 'react-toastify';
 
 const Login = () => {
+    const emailRef = useRef('');
 
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading1,
+        error1,
+      ] = useSignInWithEmailAndPassword(auth);
+      const navigate = useNavigate();
+      const [sendPasswordResetEmail, loading2, error2] = useSendPasswordResetEmail(
+        auth
+      );
 
 
         const handleLoginForm = event => {
             event.preventDefault();
+
+            const email = event.target.email.value;
+            const password = event.target.password.value;
+            
+            signInWithEmailAndPassword(email, password);
+            navigate('/home');
         }
+
+        const getPassword = (event) => {
+            const email = emailRef.current.value;
+            
+            if (email) {
+                sendPasswordResetEmail(email);
+                toast ('Send In SMS on Your Gmail')
+            }
+            else{
+                toast('First Give your Email');
+            }
+        }
+
+        const handleGoRegister = () =>{
+            navigate('/registration');
+        }
+
 
 
     return (
@@ -30,32 +66,28 @@ const Login = () => {
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                     <div className="form-outline mb-4">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" /></div>
+                        <Form.Control ref={emailRef} type="email" name="email" placeholder="Enter email" /></div>
                         
                        
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
+                        <Form.Control type="password" placeholder="Password" name="password" />
                     </Form.Group>
                     <div className="form-remember-handle">
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="Remember me" />
                     </Form.Group>
-                    <p><button id='forgot-btn' className='forgot-btn text-primary btn btn-link'>Forgot Password?</button></p>
+                    <button id='forgot-btn' className='forgot-btn text-primary btn btn-link' onClick={getPassword}>Forgot Password?</button>
                     </div>
                     <Button id='blog-btn' variant="primary" type="submit">
                         Submit
                     </Button>
                     <div className="registerNow text-center">
-                        <p>Not a Member? <span className='register-class'>Register here</span></p>
+                        <p>Not a Member? <span className='register-class' onClick={handleGoRegister}>Register here</span></p>
                         <h5>Or Sign Up with: </h5>
-                        <div className="icon-section mx-auto mt-3">
-                        <p><FaGoogle></FaGoogle></p>
-                        <p><FaGithub></FaGithub></p>
-                        <p><FaFacebookF></FaFacebookF></p>
-                        </div>
+                        <SocialLogin></SocialLogin>
                     </div>
                     </Form>
                 </div>

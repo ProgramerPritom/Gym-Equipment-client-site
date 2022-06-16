@@ -1,12 +1,22 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../../firebase.init';
 import './Header.css';
 
 const Header = () => {
+    const [user, loading, error] = useAuthState(auth);
+    // console.log(user)
+
+    const handleSignOut = () =>{
+        signOut(auth);
+    }
+
     return (
         <div>
             <div className="nav-area">
@@ -31,7 +41,7 @@ const Header = () => {
                     </NavDropdown>
                 </Nav></div>
                 <div className="col-md-2">
-                    <Nav>
+                <Nav>
                 <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">
@@ -47,10 +57,22 @@ const Header = () => {
                 </div>
                 <div className="col-md-4">
                 <Nav>
-                    <Nav.Link as={Link} to='/registration'>Registration</Nav.Link>
-                    <Nav.Link as={Link} to='/login'>
+                    {/* <Nav.Link as={Link} to='/registration'>Registration</Nav.Link> */}
+                    {
+                        user?<Nav>
+                        <NavDropdown title="Admin" id="collasible-nav-dropdown">
+                            <NavDropdown.Item as={Link} to='/adminuser'>Dashboard</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to='/myItem'>
+                                My Items
+                            </NavDropdown.Item>
+                            <NavDropdown.Item onClick={handleSignOut}>SignOut</NavDropdown.Item>
+                            
+                            </NavDropdown>
+                            </Nav>:
+                        <Nav.Link as={Link} to='/login'>
                     Login
                     </Nav.Link>
+                    }
                 </Nav>
                 </div>
                 </Navbar.Collapse>

@@ -26,6 +26,9 @@ const Register = () => {
         navigate('/login');
         
     }
+    const handleLoginGo = () =>{
+        navigate('/login');
+    }
 
 
     return (
@@ -53,7 +56,7 @@ const Register = () => {
             type="submit">
                 Submit
             </Button>
-            <p className='create-register-text text-center'>Already have account? <Link to='/login' className='text-danger'>Login now</Link></p>
+            <p className='create-register-text text-center'>Already have account? <Link to='/login' onClick={handleLoginGo} className='text-danger'>Login now</Link></p>
         </Form>
         
             </div>
