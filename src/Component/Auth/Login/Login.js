@@ -6,6 +6,14 @@ import { FaGithub } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 
 const Login = () => {
+
+
+
+        const handleLoginForm = event => {
+            event.preventDefault();
+        }
+
+
     return (
         <div>
             <div className="login-area">
@@ -17,7 +25,7 @@ const Login = () => {
                 
 
 
-                <Form>
+                <Form onSubmit={handleLoginForm}>
                     
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                     <div className="form-outline mb-4">

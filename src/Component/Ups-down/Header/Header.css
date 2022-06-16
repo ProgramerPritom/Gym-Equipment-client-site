@@ -3,7 +3,7 @@
     
 }
 nav.navbar.navbar-expand-lg.navbar-light.bg-primary {
-    background-color: rgb(38, 109, 190) !important;
+    background-color: rgb(86, 75, 236) !important;
 }
 .navbar-brand{
     width: 25% !important;
@@ -12,4 +12,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-primary {
 }
 .logo-img{
     width: 35%;
+}
+.nav-link{
+    color: white !important;
 }

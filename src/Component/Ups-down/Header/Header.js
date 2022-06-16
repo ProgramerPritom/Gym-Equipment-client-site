@@ -12,7 +12,7 @@ const Header = () => {
             <div className="nav-area">
             <Navbar collapseOnSelect expand="lg" bg="primary" variant="light">
             <Container>
-                <Navbar.Brand href="#home"><img className='logo-img' src='https://i.ibb.co/4gnXMYf/Pngtree-fitness-equipment-treadmill-7526204.png' alt="" /></Navbar.Brand>
+                <Navbar.Brand as={Link} to='/'><img className='logo-img' src='https://i.ibb.co/4gnXMYf/Pngtree-fitness-equipment-treadmill-7526204.png' alt="" /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                 <div className="col-md-6"><Nav>
@@ -47,7 +47,7 @@ const Header = () => {
                 </div>
                 <div className="col-md-4">
                 <Nav>
-                    <Nav.Link href="#deets">Registration</Nav.Link>
+                    <Nav.Link as={Link} to='/registration'>Registration</Nav.Link>
                     <Nav.Link as={Link} to='/login'>
                     Login
                     </Nav.Link>
