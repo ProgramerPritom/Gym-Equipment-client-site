@@ -17,10 +17,18 @@ const Login = () => {
         error1,
       ] = useSignInWithEmailAndPassword(auth);
       const navigate = useNavigate();
-      const [sendPasswordResetEmail, loading2, error2] = useSendPasswordResetEmail(
+      const [sendPasswordResetEmail,sending] = useSendPasswordResetEmail(
         auth
       );
-
+      let errorElement;
+        if (user) {
+            navigate('/home');
+        }
+    
+      if (error1) {
+        errorElement = <p className='text-danger text-center'>Error: {error1.message}</p>
+    }
+       
 
         const handleLoginForm = event => {
             event.preventDefault();
@@ -29,7 +37,7 @@ const Login = () => {
             const password = event.target.password.value;
             
             signInWithEmailAndPassword(email, password);
-            navigate('/home');
+            
         }
 
         const getPassword = (event) => {
@@ -75,12 +83,15 @@ const Login = () => {
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" placeholder="Password" name="password" />
                     </Form.Group>
+                    {errorElement}
+
                     <div className="form-remember-handle">
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="Remember me" />
                     </Form.Group>
                     <button id='forgot-btn' className='forgot-btn text-primary btn btn-link' onClick={getPassword}>Forgot Password?</button>
                     </div>
+                    
                     <Button id='blog-btn' variant="primary" type="submit">
                         Submit
                     </Button>
