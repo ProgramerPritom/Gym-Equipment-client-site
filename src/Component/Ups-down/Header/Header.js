@@ -48,7 +48,7 @@ const Header = () => {
                 <div className="col-md-4">
                 <Nav>
                     <Nav.Link href="#deets">Registration</Nav.Link>
-                    <Nav.Link eventKey={2} href="#memes">
+                    <Nav.Link as={Link} to='/login'>
                     Login
                     </Nav.Link>
                 </Nav>

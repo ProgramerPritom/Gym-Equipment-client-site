@@ -1,0 +1,26 @@
+#forgot-btn{
+    border: none !important; 
+    padding: 0 !important;
+    font-size: 23px;
+}
+.form-remember-handle{
+    display: flex;
+    justify-content: space-around;
+
+}
+.register-class{
+    color: brown;
+    font-weight: 600;
+    font-size: 23px;
+}
+.icon-section{
+
+    width: 60%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.icon-section p svg{
+    color: rgb(91, 91, 226);
+    cursor: pointer;
+    font-size: 30px;
+}
