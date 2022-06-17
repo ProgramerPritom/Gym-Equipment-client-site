@@ -1,10 +1,20 @@
 import React from 'react';
 import { Button, Card, ListGroup } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+
 import './CatagoryCard.css';
 
 const CatagoryCard = ({showEquipment}) => {
+    const {_id} = showEquipment;
     const showDescription = showEquipment.description.slice(0,100);
     const seeMore = showDescription + ".....";
+    const navigate = useNavigate();
+
+    const handleNavigateManage = (id) =>{
+        navigate(`/manage/${id}`);
+    }
+
+
     
     return (
         <div>
@@ -16,7 +26,7 @@ const CatagoryCard = ({showEquipment}) => {
                 <Card.Title>{showEquipment.name}</Card.Title>
                 <Card.Text>
                     
-                {showDescription === 0 ? showDescription: seeMore}
+                {showDescription ===99 ? showDescription: seeMore}
                 
                 </Card.Text>
                 
@@ -28,7 +38,7 @@ const CatagoryCard = ({showEquipment}) => {
             <ListGroup className="list-group-flush text-center">
             <ListGroup.Item>Supplier : {showEquipment.supplier}</ListGroup.Item>
             </ListGroup>
-            <Button id='blog-btn' variant="primary">Manage Store</Button>
+            <Button onClick={() => handleNavigateManage(_id)} id='blog-btn' variant="primary">Manage Store</Button>
             </Card>
 
             

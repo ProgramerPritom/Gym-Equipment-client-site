@@ -1,0 +1,15 @@
+td> p{
+    /* padding: 10 !important; */
+    display: flex !important;
+    justify-content: center !important;
+    padding-top: 20px !important;
+    align-items: center !important;
+}
+.icon > p{
+    cursor: pointer;
+    font-size: 25px !important;
+}
+.iconm{
+    font-size: 25px !important;
+    cursor: pointer;
+}
