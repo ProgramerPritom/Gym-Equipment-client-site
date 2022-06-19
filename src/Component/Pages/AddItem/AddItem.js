@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import { toast } from 'react-toastify';
 
 const AddItem = () => {
     const [user] = useAuthState(auth);
@@ -16,7 +17,23 @@ const AddItem = () => {
         const supplier = event.target.supplier.value;
         const description = event.target.description.value;
         const image = event.target.image.value;
-        console.log(name,email,price,quantity,supplier,description,image);
+        // console.log(name,email,price,quantity,supplier,description,image);
+        
+        fetch('http://localhost:5000/equipments',{
+            method: 'POST',
+            body: JSON.stringify({
+                name,email,price,quantity,supplier,description,image
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            event.target.reset()
+            toast('Equipment added, Go to Equipments')
+        })
 
 
     }
