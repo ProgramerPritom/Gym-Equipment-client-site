@@ -32,19 +32,7 @@ const Header = () => {
                     
                 </Nav></div>
                 <div className="col-md-2">
-                <Nav>
-                <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">
-                        Another action
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">
-                        Separated link
-                    </NavDropdown.Item>
-                    </NavDropdown>
-                    </Nav>
+                {user? <Nav.Link as={Link} to='/additem'>Add Item</Nav.Link>:''}
                 </div>
                 <div className="col-md-4">
                 <Nav>

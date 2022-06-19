@@ -1,0 +1,56 @@
+.price-text{
+    font-size: 25px !important;
+}
+.price-text p{
+    font-weight: 700 !important;
+}
+.price-text input {
+    width: 20%;
+}
+.equipmentName {
+    padding: 0px !important;
+    margin-right: 20px !important;
+    margin-bottom: 0px !important;
+    border-bottom: 2px solid rgb(113, 113, 241);
+    line-height: 60px !important;
+}
+.equipName{
+    font-size: 45px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+.quantity-area{
+    display: flex;
+    
+}
+.quantity-area h4, h3{
+    margin-right: 0px !important;
+    /* margin-left: 0px !important; */
+    margin-bottom: 0px !important;
+}
+.card-header{
+    display: flex;
+    justify-content: space-evenly;
+}
+.quantity-area h4 {
+    margin-top: 6px;
+    margin-left: 6px ;
+}
+#blog-btn2{
+    background-color: rgb(97, 97, 238);
+    /* border-color: red; */
+    border: 2px solid rgb(79, 224, 180);
+    border-radius: 20px;
+    color: white;
+    padding: 10px;
+}
+.icon{
+    font-size: 25px;
+}
+#blog-btn2:hover{
+    background-color: transparent;
+    color: black;
+}

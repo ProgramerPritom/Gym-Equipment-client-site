@@ -4,15 +4,18 @@ import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import auth from '../../../firebase.init';
-import {  useNavigate } from 'react-router-dom';
+import {  useNavigate, useLocation } from 'react-router-dom';
 
 const SocialLogin = () => {
+    const location = useLocation()
     const navigate = useNavigate()
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
 
+    let from = location.state?.from?.pathname || "/home";
+
     if (user) {
-        navigate('/home');
+        navigate(from, { replace: true });
     }
     let errorElement;
     if(error || error1){

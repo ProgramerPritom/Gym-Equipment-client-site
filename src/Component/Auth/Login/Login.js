@@ -3,12 +3,15 @@ import { Button, Form } from 'react-bootstrap';
 import SocialLogin from '../Social/SocialLogin';
 import './Login.css';
 import { Link, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { toast } from 'react-toastify';
 
 const Login = () => {
     const emailRef = useRef('');
+
+    const location = useLocation()
 
     const [
         signInWithEmailAndPassword,
@@ -20,10 +23,15 @@ const Login = () => {
       const [sendPasswordResetEmail,sending] = useSendPasswordResetEmail(
         auth
       );
+
+      let from = location.state?.from?.pathname || "/";
+
+
       let errorElement;
         if (user) {
-            navigate('/home');
+            navigate(from, { replace: true });
         }
+        
     
       if (error1) {
         errorElement = <p className='text-danger text-center'>Error: {error1.message}</p>
