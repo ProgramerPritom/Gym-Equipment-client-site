@@ -1,15 +1,54 @@
 import React from 'react';
 import { Button, Card, Col, Container, FloatingLabel, Form, InputGroup, Row } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import {toast} from 'react-toastify';
+import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import useEquipDetails from '../../../Hooks/useEquipDetails';
 import './ManageEquipDetails.css';
 import { FaPlus, FaRegEdit } from "react-icons/fa";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import Spinner from '../../Auth/Loading/Spinner';
 
 
 const ManageEquipDetails = () => {
+    const [user,loading] = useAuthState(auth);
     const {id} = useParams();
-    const [equipDetail] = useEquipDetails(id);
+    const [equipDetail, setEquipDetail] = useEquipDetails(id);
+    const navigate = useNavigate();
+    if (loading) {
+        return <Spinner></Spinner>
+    }
     // console.log(equipDetail);
+
+    const handleAdditem = () => {
+        navigate('/additem');
+    }
+    const handleDeliver = (event) =>{
+        
+        const {quantity, ...rest} = equipDetail;
+        const newQuantity = parseInt(quantity) - 1;
+        const newEquipDetail = {quantity: newQuantity, ...rest};
+        setEquipDetail(newEquipDetail);
+        
+    }
+    const handleReStock = event =>{
+        event.preventDefault();
+        // console.log(event.target.formQuantity.value);
+        const quantityValue = event.target.formQuantity.value;
+        const {quantity, ...rest} = equipDetail;
+        if (quantityValue != 0 ) {
+            const newQuantity = parseInt(quantity) + parseInt(quantityValue);
+            const newEquipDetail = {quantity: newQuantity, ...rest};
+            setEquipDetail(newEquipDetail);
+            event.target.reset();
+        }
+        else{
+            toast('Please Enter Valid Number');
+        }
+        
+        
+    }
+
     return (
         <div>
             <h2 className='equipName'>{equipDetail.name}</h2>
@@ -40,20 +79,23 @@ const ManageEquipDetails = () => {
                             <div className="card-header">
                                 <div className="quantity-area">
                                     <h3>Quantity : </h3>
-                                    <h4>{equipDetail.quantity}</h4>
+                                    <input className='input-quantity' type="number" name="quantity" value={equipDetail.quantity} id="" />
                                 </div>
-                                <Button id='blog-btn'>Delivered</Button>
+                                <Button id='blog-btn' onClick={handleDeliver}>Delivered</Button>
                             </div>
                             <div className="card-body">
                              
+                             <Form onSubmit={handleReStock}>
                              <InputGroup className="mb-3">
                                 <Form.Control
                                 placeholder="Enter Quantity"
                                 aria-label="Recipient's username"
                                 aria-describedby="basic-addon2"
+                                name='formQuantity' autoComplete='off'
                                 />
-                                <Button id='blog-btn'>ReStock</Button>
+                                <Button id='blog-btn' type='submit'>ReStock</Button>
                             </InputGroup>
+                             </Form>
                              
                              <div className="description-text">
                              <Form>
@@ -81,14 +123,14 @@ const ManageEquipDetails = () => {
                     <Row>
                         <Col>
                             <div id='blog-btn2' className="add-item">
-                                <div  className="add-item d-flex justify-content-center align-items-center">
+                                <div onClick={handleAdditem} className="add-item d-flex justify-content-center align-items-center">
                                     <FaPlus></FaPlus>
                                     <h3 className='ms-4'>Add Equipment</h3>
                                 </div>
                             </div>
                         </Col>
                         <Col>
-                            <div id="blog-btn2" className='d-flex justify-content-center align-items-center'>
+                            <div  id="blog-btn2" className='d-flex justify-content-center align-items-center'>
                                 <div className="icon"><FaRegEdit></FaRegEdit></div>
                                 <h3 className="ms-4">Update this Equipment</h3>
                             </div>

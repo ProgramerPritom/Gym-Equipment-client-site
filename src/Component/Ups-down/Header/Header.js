@@ -39,7 +39,7 @@ const Header = () => {
                     {/* <Nav.Link as={Link} to='/registration'>Registration</Nav.Link> */}
                     {
                         user?<Nav>
-                        <NavDropdown title="Admin" id="collasible-nav-dropdown">
+                        <NavDropdown title={user.displayName ? user.displayName : "Admin"} id="collasible-nav-dropdown">
                             <NavDropdown.Item as={Link} to='/adminuser'>Dashboard</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to='/myItem'>
                                 My Items

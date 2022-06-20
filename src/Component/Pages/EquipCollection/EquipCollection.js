@@ -8,7 +8,8 @@ const EquipCollection = () => {
     // console.log(equipments)
     return (
         <div>
-            <h3>This is Equipments Collection!</h3>
+            <h3 className='text-center mt-2'>All Equipment Here</h3>
+            <p className='text-center mt-2'>Find Your Equipment</p>
             <div className="display-card-area">
                 {
                     equipments.map(equipment => 

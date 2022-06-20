@@ -3,9 +3,13 @@ import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { toast } from 'react-toastify';
+import Spinner from '../../Auth/Loading/Spinner';
 
 const AddItem = () => {
-    const [user] = useAuthState(auth);
+    const [user,loading] = useAuthState(auth);
+    if (loading) {
+        return <Spinner></Spinner>
+    }
 
     const handleAddItem = event =>{
         event.preventDefault();
@@ -46,7 +50,7 @@ const AddItem = () => {
             <Form onSubmit={handleAddItem} className='mx-auto w-50 mt-4'>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" value={user.email} placeholder="Enter email" required readOnly disabled/>
+                <Form.Control type="email" value={user?.email} placeholder="Enter email" required readOnly disabled/>
                 
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
