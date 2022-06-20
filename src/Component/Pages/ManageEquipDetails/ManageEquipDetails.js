@@ -49,6 +49,37 @@ const ManageEquipDetails = () => {
         
     }
 
+    const handleDescription = (event) =>{
+        const {description, ...rest} = equipDetail;
+        const newDescription = event.target.value;
+        const newEquipDetail = {description: newDescription, ...rest};
+        // console.log(newEquipDetail);
+        setEquipDetail(newEquipDetail);
+    }
+
+    const handleUpdateEquip = () =>{
+        const quantity = equipDetail.quantity;
+        const description = equipDetail.description;
+        // const updateDetail = {quantity,description};
+
+        const url = `http://localhost:5000/equipments/${id}`;
+        fetch(url,{
+            method: 'PUT',
+            body: JSON.stringify({
+                quantity,description
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            toast('Equipment Updated Successfully')
+        })
+
+    }
+
     return (
         <div>
             <h2 className='equipName'>{equipDetail.name}</h2>
@@ -62,11 +93,12 @@ const ManageEquipDetails = () => {
                             <img className='w-50' src={equipDetail.image} alt="" />
                         </div>
                         <div className="d-flex justify-content-center align-items-center">
-                            <h4 className='equipmentName'>Supplier: <span className=''> {equipDetail.supplier}</span></h4>
+                            <h5 className='equipmentName'>Supplier: <span className=''> {equipDetail.supplier}</span></h5>
                         
-                        <div className="price-text d-flex justify-content-center align-items-center">
-                            <p className='mt-4 ms-3 '>Price :</p>
+                        <div className="price-text d-flex justify-content-center align-itemsj-center">
+                            <p className='mt-4 ms-3 '>Price</p>
                             <p className='mt-4 ms-3'>$ {equipDetail.price}</p>
+                            
                         </div>
                         </div>
                         
@@ -105,7 +137,7 @@ const ManageEquipDetails = () => {
                                 className="mb-3"
                                 contenteditable="true"
                             >
-                                <Form.Control as="textarea" placeholder="Leave a comment here" style={{ height: '200px' }} contentEditable value={equipDetail.description}/>
+                                <Form.Control as="textarea" placeholder="Leave a comment here" style={{ height: '200px' }} contentEditable onChange={handleDescription} value={equipDetail.description}/>
                                 
                             </FloatingLabel>
                              </Form>
@@ -130,7 +162,7 @@ const ManageEquipDetails = () => {
                             </div>
                         </Col>
                         <Col>
-                            <div  id="blog-btn2" className='d-flex justify-content-center align-items-center'>
+                            <div onClick={handleUpdateEquip} id="blog-btn2" className='d-flex justify-content-center align-items-center'>
                                 <div className="icon"><FaRegEdit></FaRegEdit></div>
                                 <h3 className="ms-4">Update this Equipment</h3>
                             </div>

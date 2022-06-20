@@ -1,0 +1,12 @@
+.notFoud-img{
+    width: 85%;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.not-found{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
