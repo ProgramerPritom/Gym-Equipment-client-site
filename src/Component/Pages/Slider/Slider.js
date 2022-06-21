@@ -37,9 +37,9 @@ const Slider = () => {
                     />
 
                     <Carousel.Caption>
-                    <h3>Third slide label</h3>
+                    <h3>Watch Our Store Quantity</h3>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                    Never give up on a dream just because of the time it will take to accomplish it. The time will pass anyway
                     </p>
                     </Carousel.Caption>
                 </Carousel.Item>
