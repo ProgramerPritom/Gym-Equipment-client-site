@@ -4,7 +4,7 @@ const useEquipDetails = (id) => {
 
     const [equipDetail, setEquipDetail] = useState({});
     useEffect( () => {
-        const url = `http://localhost:5000/equipments/${id}`;
+        const url = `https://stormy-cove-02772.herokuapp.com/equipments/${id}`;
         fetch(url)
         .then(res => res.json())
         .then(data => setEquipDetail(data))

@@ -23,7 +23,7 @@ const AddItem = () => {
         const image = event.target.image.value;
         // console.log(name,email,price,quantity,supplier,description,image);
         
-        fetch('http://localhost:5000/equipments',{
+        fetch('https://stormy-cove-02772.herokuapp.com/equipments',{
             method: 'POST',
             body: JSON.stringify({
                 name,email,price,quantity,supplier,description,image

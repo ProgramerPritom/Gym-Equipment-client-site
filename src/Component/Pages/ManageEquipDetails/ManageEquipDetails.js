@@ -62,7 +62,7 @@ const ManageEquipDetails = () => {
         const description = equipDetail.description;
         // const updateDetail = {quantity,description};
 
-        const url = `http://localhost:5000/equipments/${id}`;
+        const url = `https://stormy-cove-02772.herokuapp.com/equipments/${id}`;
         fetch(url,{
             method: 'PUT',
             body: JSON.stringify({

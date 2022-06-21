@@ -9,7 +9,7 @@ const useMyItem = () => {
     const [user] = useAuthState(auth);
     const email = user.email;
     useEffect(()=>{
-        const url = `http://localhost:5000/myitem?email=${email}`;
+        const url = `https://stormy-cove-02772.herokuapp.com/myitem?email=${email}`;
         fetch(url)
         .then(res => res.json())
         .then(data => setMyItems(data))
