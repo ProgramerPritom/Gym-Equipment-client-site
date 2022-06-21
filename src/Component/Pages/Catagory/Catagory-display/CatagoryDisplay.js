@@ -10,7 +10,7 @@ const CatagoryDisplay = () => {
     
     return (
         <div>
-            <h2>Display Equipment are : </h2>
+            <h2 className='text-center'>Letest Equipments </h2>
             <div className="display-card-area p-3">
             {
                 showEquipments.map(showEquipment => <CatagoryCard key={showEquipment._id} showEquipment={showEquipment}></CatagoryCard>)

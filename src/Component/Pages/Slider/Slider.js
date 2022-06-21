@@ -13,8 +13,8 @@ const Slider = () => {
                     alt="First slide"
                     />
                     <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h3>Best Equipment Stock</h3>
+                    <p>We found to be a very solid, sturdy bike, with nice, large toe baskets. And it produced a quiet ride.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -25,8 +25,8 @@ const Slider = () => {
                     />
 
                     <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h3>Latest Gym Assesories</h3>
+                    <p>Find New and Heavy gym Assesories stock here.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>

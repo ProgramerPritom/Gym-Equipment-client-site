@@ -7,7 +7,7 @@ const BlogDisplay = () => {
         <div>
             <div className="blog-display-area">
                 <div className="blog-text">
-                    <h3 className='text-center'>Our Blog</h3>
+                    <h3 className='text-center'>Equipments Blog</h3>
                 </div>
                 <div className="blog-card-area">
                 <CardGroup>
